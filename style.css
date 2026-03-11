@@ -1917,44 +1917,55 @@ grid-template-columns:1fr;
   display:flex;
   justify-content:center;
 } 
-/* ===== الجامعات المشاركة ===== */
+/* ===== Universities Slider ===== */
 
-.universities-grid{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin-top:30px;
+.universities-slider{
+  overflow: hidden;
+  position: relative;
+  margin-top: 40px;
+  width: 100%;
 }
 
-.university-card{
-  background: rgba(20,16,48,0.5);
-  border:1px solid var(--border-color);
-  border-radius:12px;
-  padding:20px;
-  max-width:300px;
-  transition:0.3s;
+.universities-track{
+  display: flex;
+  width: max-content;
+  animation: universitiesMarquee 35s linear infinite;
+  will-change: transform;
 }
 
-.university-card:hover{
-  border-color: var(--border-hover);
+.universities-group{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0;
+  padding-inline-end: 24px;
 }
 
-.university-card img{
-  width:140%;
-  height:auto;
-  object-fit:contain;
-  position: center;
-}
-.universities-grid{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin-top:30px;
+.universities-group img{
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  background: #fff;
+  padding: 12px 16px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
-.universities-grid img{
-  max-width:400px;
-  width: 300px;
-  height:auto;
-  display:block;
+.universities-group img:hover{
+  transform: scale(1.06);
+}
+
+@keyframes universitiesMarquee{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-50%);
+  }
+}
+.universities-slider,
+.universities-track,
+.universities-group{
+  direction: ltr;
 }
