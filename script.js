@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var countdownEl = document.getElementById('countdown');
   if (countdownEl) {
-    var eventDate = new Date('2026-04-06T00:00:00');
+    var eventDate = new Date('2026-04-27T00:00:00+03:00');
 
     function updateCountdown() {
       var now = new Date().getTime();
