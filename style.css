@@ -259,7 +259,30 @@ body {
   font-size: 15px;
   color: var(--text-secondary);
 }
+.quote-inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-align: right;
+}
 
+.quote-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .quote-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
 .hero-info {
   display: flex;
   justify-content: center;
